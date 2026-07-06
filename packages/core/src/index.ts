@@ -1,2 +1,4 @@
 // Public API Entry Point for @devkit-ui/core
-export {};
+export * from './utils/cn.js';
+export * from './utils/polymorphic.js';
+export * from './utils/focus.js';

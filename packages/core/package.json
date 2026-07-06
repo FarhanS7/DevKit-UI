@@ -19,7 +19,7 @@
   "scripts": {
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --passWithNoTests --pool=vmThreads"
+    "test": "vitest run --pool=vmThreads"
   },
   "dependencies": {
     "@devkit-ui/tokens": "workspace:*",
@@ -30,6 +30,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
+    "jsdom": "^29.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rollup-plugin-visualizer": "^5.12.0",
