@@ -4,10 +4,13 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@9.15.4",
   "scripts": {
+    "check-env": "node scripts/check-env.js",
+    "preinstall": "node scripts/check-env.js",
     "dev": "pnpm --filter docs dev",
     "build": "pnpm -r build",
     "build:tokens": "pnpm --filter @devkit-ui/tokens build",
@@ -17,13 +20,15 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc -b",
-    "test": "vitest run",
+    "test": "pnpm -r test",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "clean": "pnpm -r exec rm -rf dist node_modules",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^9.14.0",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",

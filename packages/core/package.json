@@ -19,7 +19,7 @@
   "scripts": {
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --pool=vmThreads"
+    "test": "vitest run --passWithNoTests --pool=vmThreads"
   },
   "dependencies": {
     "@devkit-ui/tokens": "workspace:*",

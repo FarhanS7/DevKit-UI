@@ -1,0 +1,25 @@
+{
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "scope-enum": [
+      2,
+      "always",
+      [
+        "root",
+        "core",
+        "tokens",
+        "docs",
+        "phase-A",
+        "phase-B",
+        "phase-C",
+        "phase-D",
+        "phase-E",
+        "phase-F",
+        "phase-G",
+        "phase-H",
+        "phase-I",
+        "phase-1.5"
+      ]
+    ]
+  }
+}
