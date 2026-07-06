@@ -9,7 +9,8 @@
       "import": "./dist/tokens.ts",
       "types": "./dist/tokens.ts"
     },
-    "./dist/tokens.css": "./dist/tokens.css"
+    "./dist/tokens.css": "./dist/tokens.css",
+    "./dist/tokens.dark.css": "./dist/tokens.dark.css"
   },
   "files": [
     "dist"
