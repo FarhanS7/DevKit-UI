@@ -1,8 +1,9 @@
 import type { Preview } from '@storybook/react';
+import React from 'react';
 
-// Design system token CSS files will be imported here in Task B.5:
-// import '@devkit-ui/tokens/dist/tokens.css';
-// import '@devkit-ui/tokens/dist/tokens.dark.css';
+// Design system token CSS files
+import '@devkit-ui/tokens/dist/tokens.css';
+import '@devkit-ui/tokens/dist/tokens.dark.css';
 
 // Stub for ThemeBuilder live CSS var injection (wired fully in G.6)
 if (typeof window !== 'undefined') {
@@ -33,6 +34,29 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'circlehollow',
+        items: [
+          { value: 'light', icon: 'sun', title: 'Light' },
+          { value: 'dark', icon: 'moon', title: 'Dark' },
+        ],
+      },
+    },
+  },
+  decorators: [
+    (Story, context) => {
+      const theme = context.globals.theme || 'light';
+      if (typeof document !== 'undefined') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+      return React.createElement(Story);
+    },
+  ],
 };
 
 export default preview;
