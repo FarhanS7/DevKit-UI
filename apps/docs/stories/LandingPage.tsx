@@ -26,13 +26,10 @@ import {
   Zap,
   BarChart3,
   Layout,
-  GitBranch,
-  Component,
   Settings2,
   MessageSquare,
   Globe,
   Mail,
-  BookOpen,
 } from 'lucide-react';
 import './LandingPage.css';
 
@@ -50,24 +47,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
   const [theme, setTheme] = useState<'light' | 'dark'>(initialTheme);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <div className="landing-root" data-theme={theme}>
-      {/* ══════ BACKGROUND WATERMARK ══════ */}
-      <div className="watermark">
-        <div className="watermark-text">
-          DEVKIT
-          <br />
-          UI
-          <br />
-          DESIGN
-          <br />
-          SYSTEM
-        </div>
-      </div>
-
       {/* ══════ TOP UTILITY BAR ══════ */}
       <div className="container">
         <div className="topbar">
@@ -178,7 +162,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
                   { icon: <Layers size={20} />, label: 'Overlays' },
                   { icon: <Grid3x3 size={20} />, label: 'Data' },
                   { icon: <Sparkles size={20} />, label: 'Feedback' },
-                ].map((cat) => (
+                ].map(cat => (
                   <a href="#" key={cat.label} className="category-item">
                     <div className="category-icon">{cat.icon}</div>
                     <span className="category-label">{cat.label}</span>
@@ -208,7 +192,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
             { icon: <Code size={80} />, label: 'React', bgClass: 'brand-card-bg-1' },
             { icon: <Zap size={80} />, label: 'TypeScript', bgClass: 'brand-card-bg-2' },
             { icon: <Settings2 size={80} />, label: 'Vite', bgClass: 'brand-card-bg-3' },
-          ].map((brand) => (
+          ].map(brand => (
             <a href="#" key={brand.label} className="brand-card" style={{ display: 'block' }}>
               <div className={`brand-card-bg ${brand.bgClass}`} />
               <div className="brand-card-ring" />
@@ -217,7 +201,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
                   {brand.icon}
                 </div>
               </div>
-              <p className="brand-card-label" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+              <p
+                className="brand-card-label"
+                style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}
+              >
                 {brand.label}
               </p>
             </a>
@@ -229,7 +216,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
       <div className="marquee-section marquee-section-tilted">
         <div className="marquee-band marquee-band-dark">
           <div className="marquee-band-inner marquee-animate">
-            {[0, 1].map((i) => (
+            {[0, 1].map(i => (
               <span key={i} className="marquee-text marquee-text-white">
                 REACT&nbsp;&nbsp;|&nbsp;&nbsp;TYPESCRIPT&nbsp;&nbsp;|&nbsp;&nbsp;VITE&nbsp;&nbsp;|&nbsp;&nbsp;STORYBOOK&nbsp;&nbsp;|&nbsp;&nbsp;FIGMA&nbsp;&nbsp;|&nbsp;&nbsp;A11Y&nbsp;&nbsp;|&nbsp;&nbsp;TOKENS&nbsp;&nbsp;|&nbsp;&nbsp;CSS-IN-JS&nbsp;&nbsp;|&nbsp;&nbsp;
               </span>
@@ -238,7 +225,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
         </div>
         <div className="marquee-band-accent-sub">
           <div className="marquee-band-inner marquee-animate-fast">
-            {[0, 1].map((i) => (
+            {[0, 1].map(i => (
               <span key={i} className="marquee-text marquee-text-dark">
                 BUTTONS&nbsp;&nbsp;|&nbsp;&nbsp;FORMS&nbsp;&nbsp;|&nbsp;&nbsp;MODALS&nbsp;&nbsp;|&nbsp;&nbsp;TABLES&nbsp;&nbsp;|&nbsp;&nbsp;NAVIGATION&nbsp;&nbsp;|&nbsp;&nbsp;FEEDBACK&nbsp;&nbsp;|&nbsp;&nbsp;LAYOUT&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN
                 TOKENS&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -298,7 +285,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
             <div className="product-card-glow" />
             <div className="card-header">
               <span className="card-badge card-badge-accent">FEATURED</span>
-              <button className="card-heart" type="button" aria-label="Favorite" style={{ color: '#64748b' }}>
+              <button
+                className="card-heart"
+                type="button"
+                aria-label="Favorite"
+                style={{ color: '#64748b' }}
+              >
                 <Heart size={16} />
               </button>
             </div>
@@ -460,8 +452,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
             </div>
             <p className="card-name">
               Elevation &amp; Shadows
-              <br />
-              5 Levels
+              <br />5 Levels
             </p>
             <p className="card-price display-font">
               10 Tokens <span className="card-price-unit">CSS</span>
@@ -478,7 +469,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
       <div className="marquee-section marquee-section-tilted-reverse" style={{ marginTop: '5rem' }}>
         <div className="marquee-band marquee-band-accent">
           <div className="marquee-band-inner marquee-animate-fastest">
-            {[0, 1].map((i) => (
+            {[0, 1].map(i => (
               <span key={i} className="marquee-text marquee-text-dark marquee-text-large">
                 50+ COMPONENTS&nbsp;&nbsp;|&nbsp;&nbsp;50+ COMPONENTS&nbsp;&nbsp;|&nbsp;&nbsp;50+
                 COMPONENTS&nbsp;&nbsp;|&nbsp;&nbsp;50+ COMPONENTS&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -488,7 +479,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
         </div>
         <div className="marquee-band-dark-sub">
           <div className="marquee-band-inner marquee-animate-slow">
-            {[0, 1].map((i) => (
+            {[0, 1].map(i => (
               <span key={i} className="marquee-text marquee-text-white marquee-text-large">
                 SHIP FASTER WITH DEVKIT&nbsp;&nbsp;|&nbsp;&nbsp;SHIP FASTER WITH
                 DEVKIT&nbsp;&nbsp;|&nbsp;&nbsp;SHIP FASTER WITH DEVKIT&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -601,10 +592,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
 
         <div className="gallery-grid">
           <div className="gallery-item gallery-item-bg-1">
-            <MousePointerClick
-              size={64}
-              className="gallery-item-icon gallery-item-icon-rotate"
-            />
+            <MousePointerClick size={64} className="gallery-item-icon gallery-item-icon-rotate" />
           </div>
           <div className="gallery-item gallery-item-bg-2 gallery-item-offset">
             <Layers size={64} className="gallery-item-icon" />
@@ -665,10 +653,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
             <div>
               <p className="footer-col-title">Documentation</p>
               <ul className="footer-col-list">
-                <li><a href="#">Getting Started</a></li>
-                <li><a href="#">Component API</a></li>
-                <li><a href="#">Design Tokens</a></li>
-                <li><a href="#">Theming Guide</a></li>
+                <li>
+                  <a href="#">Getting Started</a>
+                </li>
+                <li>
+                  <a href="#">Component API</a>
+                </li>
+                <li>
+                  <a href="#">Design Tokens</a>
+                </li>
+                <li>
+                  <a href="#">Theming Guide</a>
+                </li>
               </ul>
             </div>
 
@@ -676,10 +672,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
             <div>
               <p className="footer-col-title">Resources</p>
               <ul className="footer-col-list">
-                <li><a href="#">Storybook</a></li>
-                <li><a href="#">Figma Kit</a></li>
-                <li><a href="#">GitHub Repo</a></li>
-                <li><a href="#">Changelog</a></li>
+                <li>
+                  <a href="#">Storybook</a>
+                </li>
+                <li>
+                  <a href="#">Figma Kit</a>
+                </li>
+                <li>
+                  <a href="#">GitHub Repo</a>
+                </li>
+                <li>
+                  <a href="#">Changelog</a>
+                </li>
               </ul>
             </div>
 
@@ -687,10 +691,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ initialTheme = 'light'
             <div>
               <p className="footer-col-title">Community</p>
               <ul className="footer-col-list">
-                <li><a href="#">Discord</a></li>
-                <li><a href="#">Contributing</a></li>
-                <li><a href="#">Code of Conduct</a></li>
-                <li><a href="#">MIT License</a></li>
+                <li>
+                  <a href="#">Discord</a>
+                </li>
+                <li>
+                  <a href="#">Contributing</a>
+                </li>
+                <li>
+                  <a href="#">Code of Conduct</a>
+                </li>
+                <li>
+                  <a href="#">MIT License</a>
+                </li>
               </ul>
             </div>
           </div>

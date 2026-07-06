@@ -1,6 +1,6 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { LandingPage } from './LandingPage';
+
+import { LandingPage } from './LandingPage.js';
 
 const meta: Meta<typeof LandingPage> = {
   title: 'Pages/Landing Page',
