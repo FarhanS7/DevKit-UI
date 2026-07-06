@@ -1,0 +1,23 @@
+{
+  "name": "@devkit-ui/tokens",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/tokens.ts",
+  "types": "./dist/tokens.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tokens.ts",
+      "types": "./dist/tokens.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "style-dictionary build"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.2",
+    "typescript": "^5.7.0"
+  }
+}
