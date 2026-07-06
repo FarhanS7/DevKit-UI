@@ -8,13 +8,14 @@
     ".": {
       "import": "./dist/tokens.ts",
       "types": "./dist/tokens.ts"
-    }
+    },
+    "./dist/tokens.css": "./dist/tokens.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "style-dictionary build"
+    "build": "style-dictionary build --config sd.config.cjs"
   },
   "devDependencies": {
     "style-dictionary": "^3.9.2",
