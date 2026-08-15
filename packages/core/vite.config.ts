@@ -41,4 +41,9 @@ export default defineConfig({
     sourcemap: true,
     minify: 'esbuild',
   },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    pool: 'vmThreads',
+  },
 });
