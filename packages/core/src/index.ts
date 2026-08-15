@@ -6,3 +6,4 @@ export * from './components/VisuallyHidden/index.js';
 export * from './components/Button/index.js';
 export * from './components/Input/index.js';
 export * from './components/Icon/index.js';
+export * from './hooks/index.js';
