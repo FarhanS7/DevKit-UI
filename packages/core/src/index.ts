@@ -4,3 +4,4 @@ export * from './utils/polymorphic.js';
 export * from './utils/focus.js';
 export * from './components/VisuallyHidden/index.js';
 export * from './components/Button/index.js';
+export * from './components/Input/index.js';
