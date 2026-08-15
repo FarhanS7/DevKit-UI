@@ -7,3 +7,4 @@ export * from './components/Button/index.js';
 export * from './components/Input/index.js';
 export * from './components/Icon/index.js';
 export * from './hooks/index.js';
+export * from './components/Dialog/index.js';
