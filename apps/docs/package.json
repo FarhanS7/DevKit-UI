@@ -11,12 +11,14 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.117.1",
     "@devkit-ui/core": "workspace:*",
     "@devkit-ui/tokens": "workspace:*",
     "lucide-react": "^1.23.0",
     "next": "^14.2.16",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^8.4.2",

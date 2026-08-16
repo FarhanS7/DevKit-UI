@@ -39,6 +39,7 @@ export default [
         __dirname: 'readonly',
         window: 'readonly',
         document: 'readonly',
+        console: 'readonly',
         setTimeout: 'readonly',
         clearTimeout: 'readonly',
       },
@@ -104,9 +105,15 @@ export default [
       'eslint.config.js',
       '**/vite.config.ts',
       'apps/docs/.storybook/**/*.ts',
+      'scripts/**/*.js',
+      'apps/docs/pages/api/**/*.ts',
     ],
     languageOptions: {
       parser: tsParser,
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+      },
       parserOptions: {
         project: null,
       },
