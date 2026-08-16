@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "style-dictionary build --config sd.config.cjs",
-    "test": "vitest run --pool=vmThreads"
+    "test": "vitest run --pool=forks"
   },
   "devDependencies": {
     "style-dictionary": "^3.9.2",

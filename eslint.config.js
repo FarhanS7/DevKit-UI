@@ -82,6 +82,17 @@ export default [
     },
   },
   {
+    // Type-test files declare type aliases for compile-time assertions only.
+    // These variables are intentionally unused at runtime — they exist solely
+    // to verify that TypeScript catches invalid type combinations via @ts-expect-error.
+    files: ['**/*.test-d.ts'],
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'import/order': 'off',
+    },
+  },
+  {
     // Specific overrides for configuration or scripts files
     files: [
       '*.config.js',
