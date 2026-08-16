@@ -1,6 +1,12 @@
-# Ignore all markdown files in the repository
+# Ignore markdown files by default, but allow project documentation
 *.md
 **/*.md
+!README.md
+!CONTRIBUTING.md
+!CHANGELOG.md
+!Walkthroughs/**/*.md
+!project-docs/**/*.md
+!Implementation Plan/**/*.md
 
 # Ignore template HTML files
 template.html
