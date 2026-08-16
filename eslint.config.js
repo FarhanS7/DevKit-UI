@@ -24,6 +24,8 @@ export default [
         __dirname: 'readonly',
         window: 'readonly',
         document: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
       },
     },
   },
@@ -37,6 +39,8 @@ export default [
         __dirname: 'readonly',
         window: 'readonly',
         document: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
       },
       parserOptions: {
         project: ['./tsconfig.json', './packages/*/tsconfig.json', './apps/*/tsconfig.json'],
