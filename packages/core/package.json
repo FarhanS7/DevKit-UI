@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@devkit-ui/tokens": "workspace:*",
+    "@radix-ui/react-popover": "^1.1.23",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.2"
   },

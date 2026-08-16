@@ -9,6 +9,7 @@
 import { expect, afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import { toHaveNoViolations } from 'jest-axe';
+import '@testing-library/jest-dom/vitest';
 
 // Extend Vitest matchers globally so individual tests never need to call
 // `expect.extend(toHaveNoViolations)` themselves.

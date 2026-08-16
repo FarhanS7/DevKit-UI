@@ -15,3 +15,5 @@ export * from './components/Dialog/index.js';
 export * from './components/Checkbox/index.js';
 export * from './components/Tabs/index.js';
 export * from './components/Accordion/index.js';
+export * from './components/Select/index.js';
+export * from './components/Combobox/index.js';
