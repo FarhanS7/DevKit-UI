@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 function checkEnv() {
   console.log('🔍 Checking local development environment...');
-  
+
   // 1. Check Node.js Version
   const nodeVersion = process.versions.node;
   const majorNode = parseInt(nodeVersion.split('.')[0], 10);
@@ -35,7 +35,9 @@ function checkEnv() {
   // 3. Verify pnpm-lock.yaml existence
   const lockfilePath = path.join(__dirname, '..', 'pnpm-lock.yaml');
   if (!fs.existsSync(lockfilePath)) {
-    console.error('❌ Missing pnpm-lock.yaml at root directory. Run "pnpm install" to generate it.');
+    console.error(
+      '❌ Missing pnpm-lock.yaml at root directory. Run "pnpm install" to generate it.'
+    );
     process.exit(1);
   }
   console.log('✅ pnpm-lock.yaml detected.');

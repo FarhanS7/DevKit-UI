@@ -63,11 +63,7 @@ const Heading = React.forwardRef(
   ) => {
     const Component = as ?? 'h1';
     return (
-      <Component
-        ref={ref}
-        className={cn(headingVariants({ variant }), className)}
-        {...rest}
-      >
+      <Component ref={ref} className={cn(headingVariants({ variant }), className)} {...rest}>
         {children}
       </Component>
     );

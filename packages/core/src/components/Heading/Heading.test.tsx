@@ -14,9 +14,7 @@ describe('Heading component', () => {
   });
 
   it('renders with the correct variant classes', () => {
-    const { container } = render(
-      <Heading variant="heading-xl">Big Title</Heading>
-    );
+    const { container } = render(<Heading variant="heading-xl">Big Title</Heading>);
     const el = container.firstChild as HTMLElement;
     expect(el.className).toContain('[font-size:var(--font-size-4xl)]');
     expect(el.className).toContain('[font-weight:var(--font-weight-bold)]');
@@ -35,9 +33,7 @@ describe('Heading component', () => {
   });
 
   it('merges custom className with variant classes', () => {
-    const { container } = render(
-      <Heading className="custom-heading">Styled</Heading>
-    );
+    const { container } = render(<Heading className="custom-heading">Styled</Heading>);
     const el = container.firstChild as HTMLElement;
     expect(el.className).toContain('custom-heading');
     expect(el.className).toContain('tracking-tight');
@@ -71,9 +67,7 @@ describe('Heading component', () => {
   it('renders all heading levels correctly', () => {
     const levels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
     for (const level of levels) {
-      const { container, unmount } = render(
-        <Heading as={level}>Level {level}</Heading>
-      );
+      const { container, unmount } = render(<Heading as={level}>Level {level}</Heading>);
       const el = container.firstChild as HTMLElement;
       expect(el.tagName).toBe(level.toUpperCase());
       unmount();
@@ -81,9 +75,7 @@ describe('Heading component', () => {
   });
 
   it('has zero accessibility violations', async () => {
-    const { container } = render(
-      <Heading as="h1">Accessible heading</Heading>
-    );
+    const { container } = render(<Heading as="h1">Accessible heading</Heading>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

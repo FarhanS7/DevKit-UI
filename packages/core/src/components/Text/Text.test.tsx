@@ -26,9 +26,7 @@ describe('Text component', () => {
   });
 
   it('merges custom className with variant classes', () => {
-    const { container } = render(
-      <Text className="custom-class">Styled text</Text>
-    );
+    const { container } = render(<Text className="custom-class">Styled text</Text>);
     const el = container.firstChild as HTMLElement;
     expect(el.className).toContain('custom-class');
     // Should still have the default variant base class

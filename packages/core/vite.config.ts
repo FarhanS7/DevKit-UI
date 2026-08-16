@@ -17,7 +17,7 @@ export default defineConfig({
       filename: 'dist/stats.html',
       open: false,
       gzipSize: true,
-      brotliSize: true,
+      brotliSize: false,
     }),
   ],
   build: {

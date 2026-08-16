@@ -188,4 +188,3 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: apps/docs
           buildScriptName: build-storybook
-

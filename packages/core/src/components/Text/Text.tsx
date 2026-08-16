@@ -63,11 +63,7 @@ const Text = React.forwardRef(
   ) => {
     const Component = as ?? 'p';
     return (
-      <Component
-        ref={ref}
-        className={cn(textVariants({ variant, truncate }), className)}
-        {...rest}
-      >
+      <Component ref={ref} className={cn(textVariants({ variant, truncate }), className)} {...rest}>
         {children}
       </Component>
     );

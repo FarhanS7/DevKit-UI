@@ -5,23 +5,30 @@ import { Meta } from '@storybook/addon-docs';
 # ADR-002: Two-Tier Token Pipeline & Style Dictionary Transformation
 
 ## Status
+
 Approved
 
 ## Context
+
 Hardcoding color hex codes, font sizes, and border radii directly inside React component files leads to visual drift, difficulty updating brand identity, and broken dark mode states across applications.
 
 ## Decision
+
 We implemented a two-tier token architecture using **Style Dictionary**:
+
 1. **Tier 1 (Primitive Tokens)**: Raw design values (e.g. `color.blue.600`, `spacing.4`).
 2. **Tier 2 (Semantic Tokens)**: Contextual aliases (e.g. `color.interactive.default`, `color.border.focus`).
 
 Tokens compile to CSS custom properties (`tokens.css` & `tokens.dark.css`), consumed in `@devkit-ui/core` using custom property references (e.g., `var(--color-text-primary)`).
 
 ## Consequences
+
 ### Positive
+
 - Centralized single-source-of-truth for design values.
 - Dark mode theme toggling requires zero component code changes — simply swap root CSS property variables.
 - Prevents `tailwind-merge` class stripping by consuming custom property utility classes (`[font-size:var(--...)]`).
 
 ### Negative
+
 - Requires a build step (`pnpm build:tokens`) prior to core package compilation.

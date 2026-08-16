@@ -5,24 +5,31 @@ import { Meta } from '@storybook/addon-docs';
 # ADR-004: Polymorphic `as`-Prop Component Pattern & Typescript Safety
 
 ## Status
+
 Approved
 
 ## Context
+
 Typography and action components (`Text`, `Heading`, `Button`) need to render as various HTML tags (e.g. rendering a `Button` visually as an `<a>` link tag, or a `Heading` semantically as `h1`-`h6`).
 
 ## Decision
+
 We implemented a strict polymorphic component pattern via helper utility type definitions (`PolymorphicComponentPropsWithRef`).
 
 Example usage:
+
 ```tsx
 <Button as="a" href="https://github.com">GitHub Link</Button>
 <Heading as="h1" variant="heading-xl">Page Header</Heading>
 ```
 
 ## Consequences
+
 ### Positive
+
 - Preserves HTML semantic validity while offering full flexibility for visual styling.
 - Type-safe auto-completion: passing `as="a"` enables HTML anchor attributes (`href`, `target`) while restricting invalid props.
 
 ### Negative
+
 - Increased TypeScript type complexity during component ref implementation.
