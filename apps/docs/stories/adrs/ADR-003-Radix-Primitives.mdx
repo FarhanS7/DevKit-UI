@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="ADRs/003 Radix Primitives" />
+
+# ADR-003: Unstyled Radix Primitives for Complex Overlay Behaviors
+
+## Status
+Approved
+
+## Context
+Building complex interactive overlays (Dialogs, Popovers, Select dropdowns) from scratch requires re-implementing intricate browser focus traps, screen reader live regions, viewport edge collision detection, and Esc key listeners.
+
+## Decision
+We adopted unstyled **Radix UI primitives** (`@radix-ui/react-popover`, `@radix-ui/react-dialog`) to handle underlying DOM positioning, event listeners, and ARIA attributes, while fully wrapping them in our custom Tailwind CSS tokens and compound component API syntax.
+
+## Consequences
+### Positive
+- Bulletproof WCAG 2.1 AA accessibility out of the box.
+- Zero opinionated styling from third-party libraries — full visual control via DevKit UI design tokens.
+- Native viewport overflow and screen collision containment.
+
+### Negative
+- Adds external peer/runtime dependencies to core package bundle size (managed within 80KB budget).

@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="ADRs/001 Monorepo Architecture" />
+
+# ADR-001: pnpm Workspaces Monorepo Architecture
+
+## Status
+Approved
+
+## Context
+When architecting DevKit UI, we needed to separate visual design system tokens, React core component implementation logic, and Storybook documentation into modular packages while enabling fast local iteration and single-command builds.
+
+Options considered:
+1. Single monolithic package containing components, tokens, and docs.
+2. Multiple independent Git repositories.
+3. Monorepo workspace using pnpm and Turbo/Lerna.
+
+## Decision
+We chose a monorepo structure managed by **pnpm workspaces** (`@devkit-ui/monorepo` with `packages/core`, `packages/tokens`, `apps/docs`).
+
+## Consequences
+### Positive
+- Strict isolation of token transformations and component compilation.
+- Symlinked workspace dependencies (`workspace:*`) enable instant local dev iteration without published npm packages.
+- Accelerated CI build speeds with pnpm store caching.
+
+### Negative
+- Requires pnpm package manager (`>= 8.0.0`) configuration across contributor environments.
